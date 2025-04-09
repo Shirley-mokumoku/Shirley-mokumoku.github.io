@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动方块布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .row {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .blue-block {
+            height: 900px;
+            background-color: blue;
+            margin-bottom: 20px;
+        }
+        
+        .gray-block {
+            height: 300px;
+            background-color: gray;
+            width: calc(11.11% - 20px);
+            margin-right: 20px;
+            margin-bottom: 20px;
+            float: left;
+        }
+        
+        .gray-block:last-child {
+            margin-right: 0;
+        }
+        
+        .purple-block {
+            height: 1000px;
+            background-color: purple;
+            clear: both;
+            margin-bottom: 20px;
+        }
+        
+        /* 第四行样式 */
+        .fourth-row {
+            display: flex;
+            width: 100%;
+        }
+        
+        .left-column {
+            width: 30%;
+            margin-right: 2%;
+        }
+        
+        .brown-block {
+            height: 600px;
+            background-color: brown;
+        }
+        
+        .middle-column {
+            width: 38%;
+            margin-right: 2%;
+        }
+        
+        .middle-blue-block {
+            height: 110px;
+            background-color: blue;
+            margin-bottom: 10px;
+        }
+        
+        .middle-blue-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .right-column {
+            width: 28%;
+        }
+        
+        .right-gray-block {
+            height: 100px;
+            background-color: gray;
+            margin-bottom: 10px;
+        }
+        
+        .right-gray-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 第五行样式 */
+        .fifth-row {
+            display: flex;
+            width: 100%;
+        }
+        
+        .fifth-left {
+            width: 33.33%;
+            height: 200px;
+            background-color: yellow;
+            margin-right: 0.5%;
+        }
+        
+        .fifth-middle {
+            width: 33.33%;
+            height: 200px;
+            background-color: cyan;
+            margin-right: 0.5%;
+        }
+        
+        .fifth-right {
+            width: 33.33%;
+            height: 200px;
+            background-color: blue;
+        }
+        
+        /* 第六行样式 */
+        .sixth-row {
+            display: flex;
+            width: 100%;
+        }
+        
+        .sixth-left-column,
+        .sixth-right-column {
+            width: 50%;
+        }
+        
+        .sixth-left-column {
+            margin-right: 1%;
+        }
+        
+        .sixth-right-column {
+            margin-left: 1%;
+        }
+        
+        .small-gray-block {
+            height: 80px;
+            background-color: gray;
+            margin-bottom: 10px;
+        }
+        
+        .small-gray-block:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="blue-block"></div>
+    </div>
+    
+    <div class="row">
+        <!-- 9个灰色方块 -->
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+        <div class="gray-block"></div>
+    </div>
+    
+    <div class="row">
+        <div class="purple-block"></div>
+    </div>
+    
+    <!-- 第四行 -->
+    <div class="row fourth-row">
+        <!-- 左侧 -->
+        <div class="left-column">
+            <div class="brown-block"></div>
+        </div>
+        
+        <!-- 中间 -->
+        <div class="middle-column">
+            <div class="middle-blue-block"></div>
+            <div class="middle-blue-block"></div>
+            <div class="middle-blue-block"></div>
+            <div class="middle-blue-block"></div>
+            <div class="middle-blue-block"></div>
+        </div>
+        
+        <!-- 右侧 -->
+        <div class="right-column">
+            <div class="right-gray-block"></div>
+            <div class="right-gray-block"></div>
+            <div class="right-gray-block"></div>
+            <div class="right-gray-block"></div>
+            <div class="right-gray-block"></div>
+            <div class="right-gray-block"></div>
+        </div>
+    </div>
+    
+    <!-- 第五行 -->
+    <div class="row fifth-row">
+        <div class="fifth-left"></div>
+        <div class="fifth-middle"></div>
+        <div class="fifth-right"></div>
+    </div>
+    
+    <!-- 第六行 -->
+    <div class="row sixth-row">
+        <!-- 左侧15个灰色方块 -->
+        <div class="sixth-left-column">
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+        </div>
+        
+        <!-- 右侧15个灰色方块 -->
+        <div class="sixth-right-column">
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+            <div class="small-gray-block"></div>
+        </div>
+    </div>
+</body>
+</html>
