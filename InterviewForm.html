@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                /* 设置图片样式 */
+                .image-container {
+            position: relative;
+            width: 100%; /* 根据需要调整图片宽度 */
+            height: 300px; /* 根据需要调整图片高度 */
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持图片比例并填充 */
+        }
+        .image-container .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(208, 182, 255);
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 
+                -1px -1px 0 rgb(61, 61, 61), /* 上左阴影 */
+                1px -1px 0 rgb(61, 61, 61),  /* 上右阴影 */
+                -1px 1px 0 rgb(61, 61, 61),  /* 下左阴影 */
+                1px 1px 0 rgb(61, 61, 61);   /* 下右阴影 */
+        }
+
+           /* 设置按钮样式 */
+           .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+        }
+        .button-container button {
+            padding: 30px 110px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50; /* 按钮背景颜色 */
+            color: white; /* 按钮文字颜色 */
+        }
+        .button-container button:hover {
+            background-color: #45a049; /* 鼠标悬停时的背景颜色 */
+        }
+                /* 设置容器样式 */
+        .container {
+            display: flex; /* 使用flex布局 */
+            align-items: flex-start; /* 垂直对齐到顶部 */
+            justify-content: space-between; /* 水平两端对齐 */
+            border: 1px solid #ccc; /* 添加边框以便观察 */
+            padding: 20px; /* 内边距 */
+        }
+        /* 左模块 */
+        .left-module{
+            background-color: #f0f0f0; /* 背景颜色 */
+            padding: 20px; /* 内边距 */
+            border-radius: 8px; /* 圆角 */
+            flex: 1; /* 占据剩余空间的比例 */
+            margin-right: 10px; /* 右边距 */
+        }
+        /* 右模块 */
+        .right-module{
+            background-color: #e0e0e0; /* 背景颜色 */
+            padding: 80px; /* 内边距 */
+            border-radius: 8px; /* 圆角 */
+            flex: 2; /* 占据剩余空间的比例 */
+            margin-left: 10px; /* 左边距 */
+        }
+
+        /* 隐藏内容的样式 */
+        .hidden {
+            display: none;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .myimg{
+            text-align: center;
+        }
+        h2{
+            background-color:blue;
+            color: antiquewhite;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+        .container img{
+            box-shadow: 10px 10px 5px #888888;
+        }
+        .hobby-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hobby-item {
+    display: flex;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+.hobby-image {
+    flex: 0 0 40%;
+    padding: 10px;
+}
+
+.hobby-text {
+    flex: 0 0 60%;
+    padding: 10px;
+    font-size: 20px; /* 5号字体 */
+}
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="background.jpg" alt="背景图片">
+        <div class="text-overlay">嗨，新朋友！欢迎来到我的主页！</div>
+    </div>
+      <!-- 按钮模块 -->
+      <div class="button-container">
+        <button onclick="showHome()">我的首页</button>
+        <!-- <button onclick="showHome()">首页</button> -->
+        <button onclick="showMyInfo()">我的信息</button>
+        <button onclick="showMyHobby()">我的爱好</button>
+        <button onclick="showMyPhotos()">我的相册</button>
+        <button onclick="showComments()">在线留言</button>
+    </div>
+    
+    <!-- 首页内容 -->
+    <div id="home-content" class="container">
+        <img src="emoticon.jpg" alt="emoticon" width="400" height="500">
+        <p>《——看看这只可爱的老鼠，你就没有想点击其他按钮的欲望吗？</p>
+
+    </div>
+
+    <!-- 我的信息内容 -->
+    <div id="my-info-content" class="container hidden">
+        <!-- 第三行：左边图片，右边内容 -->
+            <div class="container">
+                <div class="left-module">
+                    <img src="photo.jpg" alt="photograph" width="400" height="500">
+                </div>
+                <div class="right-module">
+                    <h1><b>杨霂</b></h1>
+                    <hr>
+                    <h3><b>性别：</b>女</h3>
+                    <h3><b>电话：</b>11451111037</h3>
+                    <h3><b>邮箱：</b>520131479@qq.com</h3>
+                    <h3><b>兴趣：</b>爆炸booooom!!!</h3>
+                    <h3><b>我的自述：</b>你好呀小伙伴！我是来自上海对外经贸大学的杨霂。</h3>
+                    <hr>
+                </div>
+            </div>
+            <br>             
+    </div>
+
+    <!-- 我的爱好内容 -->
+    <div id="my-hobby-content" class="container hidden">
+        <h2>我的爱好</h2>
+        <div class="hobby-module">
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="dancing.jpg" alt="Dancing" style="width: 100%; height: auto;">
+                </div>
+                <div class="hobby-text">
+                    <p style="font-size: 20px;">跳舞是我的爱好之一，它让我充满活力。</p>
+                </div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="d5.jpg" alt="D5" style="width: 100%; height: auto;">
+                </div>
+                <div class="hobby-text">
+                    <p style="font-size: 20px;">我喜欢玩第五人格，这是我的另一个爱好。</p>
+                </div>
+            </div>
+            <div class="hobby-item">
+                <div class="hobby-image">
+                    <img src="reading.jpg" alt="Reading" style="width: 100%; height: auto;">
+                </div>
+                <div class="hobby-text">
+                    <p style="font-size: 20px;">阅读让我放松心情，增长知识。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我的相册内容 -->
+    <div id="my-photo-content" class="container hidden">
+        <div>
+            <!-- <h2>我的相册</h2> -->
+            <p>这里暂时没有可展示的照片哦。</p>
+            <p>所以没关系，来整点活吧。</p>
+            <p>以上——></p>
+            <!-- <img src="photo1.jpg" alt="Photo 1" width="200" height="200">
+            <img src="photo2.jpg" alt="Photo 2" width="200" height="200"> -->
+        </div>
+        <!-- 待补充 -->
+         <div>
+            <h2><b>教育背景Education</b></h2>
+            <br>
+            <h3><table border="1" width=1000px cellspacing="1">
+                <tr><td>时间</td><td>学校</td><td>职务</td></tr>
+                <tr><td>2000</td><td>海底对陆贸易大学</td><td>班长</td></tr>
+            </table></h3>
+            <br>
+            <h2><b>工作经验</b></h2>
+            <h3><ol>
+                <li>我爱工作</li>
+                <li>工作使我快乐</li>
+                <li>兄弟叫我开黑，我置之不理</li>
+                <li>老板让我加班，我喜极而泣</li>
+            </ol>
+            </h3>
+         </div>
+    </div>
+
+    <!-- 在线留言内容 -->
+    <div id="comment-content" class="container hidden">
+        <!-- 待补充 -->
+        <h2>在线留言</h2>
+        <p>欢迎在这里留言。</p>
+        <textarea placeholder="请输入留言内容..."></textarea>
+        <button>提交留言</button>
+    </div>
+
+
+
+
+    <script>
+        // 默认显示首页内容
+        window.onload = showHome;
+
+        // 显示首页内容
+        function showHome() {
+            document.getElementById('home-content').style.display = 'flex';
+            document.getElementById('my-info-content').style.display = 'none';
+            document.getElementById('my-hobby-content').style.display = 'none';
+            document.getElementById('my-photo-content').style.display = 'none';
+            document.getElementById('comment-content').style.display = 'none';
+      
+        }
+
+        // 显示我的信息内容
+        function showMyInfo() {
+            document.getElementById('home-content').style.display = 'none';
+            document.getElementById('my-info-content').style.display = 'flex';
+            document.getElementById('my-hobby-content').style.display = 'none';
+            document.getElementById('my-photo-content').style.display = 'none';
+            document.getElementById('comment-content').style.display = 'none';
+        }
+
+        // 显示我的爱好内容
+        function showMyHobby() {
+            document.getElementById('home-content').style.display = 'none';
+            document.getElementById('my-info-content').style.display = 'none';
+            document.getElementById('my-hobby-content').style.display = 'flex';
+            document.getElementById('my-photo-content').style.display = 'none';
+            document.getElementById('comment-content').style.display = 'none';
+        }
+
+        // 显示我的相册内容
+        function showMyPhotos() {
+            document.getElementById('home-content').style.display = 'none';
+            document.getElementById('my-info-content').style.display = 'none';
+            document.getElementById('my-hobby-content').style.display = 'none';
+            document.getElementById('my-photo-content').style.display = 'flex';
+            document.getElementById('comment-content').style.display = 'none';
+        }
+
+        // 显示在线留言内容
+        function showComments() {
+            document.getElementById('home-content').style.display = 'none';
+            document.getElementById('my-info-content').style.display = 'none';
+            document.getElementById('my-hobby-content').style.display = 'none';
+            document.getElementById('my-photo-content').style.display = 'none';
+            document.getElementById('comment-content').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
